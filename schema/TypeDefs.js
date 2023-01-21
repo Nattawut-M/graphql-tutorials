@@ -1,6 +1,15 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
+
+    enum Nationality {
+        CANADA
+        BRAZIL
+        INDIA
+        GERMANY
+        CHILE
+    }
+
     # Schema
     type User {
         id: ID!
@@ -8,8 +17,9 @@ const typeDefs = gql`
         lastname: String!
         username: String!
         age: Int!
-        nationality: String!
+        nationality: Nationality!
     }
+
 
     # GraphQL Query
     type Query {
@@ -19,4 +29,4 @@ const typeDefs = gql`
 
 module.exports = {
     typeDefs
-}
+};
