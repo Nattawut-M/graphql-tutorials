@@ -1,4 +1,6 @@
 const { ApolloServer } = require('apollo-server');
+const { typeDefs } = require("./schema/TypeDefs");
+const { resolvers } = require("./schema/Resolvers");
 
 const apolloServer = new ApolloServer({
     typeDefs, // everthing you has define in GraphQL, ext. Type, Schema etc. will be inside of 'typeDefs'
@@ -7,4 +9,4 @@ const apolloServer = new ApolloServer({
 
 apolloServer.listen()
     .then(({ url }) => console.log(`[APOLLO_SERVER] server is running on ${url}`))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
