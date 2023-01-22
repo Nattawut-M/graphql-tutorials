@@ -13,3 +13,7 @@ mutation UpdateUser($updateUser: UpdateUser!) {
     nationality
   }
 }
+
+mutation DeleteUserById($deleteUserByIdUserId: ID!) {
+  deleteUserById(userId: $deleteUserByIdUserId)
+}

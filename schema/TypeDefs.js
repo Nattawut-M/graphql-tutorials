@@ -26,6 +26,10 @@ const typeDefs = gql`
         nationality: Nationality
     }
 
+    input DeleteUser {
+        id: ID!
+    }
+
     # Schema
     type User {
         id: ID!
@@ -61,6 +65,7 @@ const typeDefs = gql`
     type Mutation {
         createUser(user: CreateUser!): User
         updateUser(user: UpdateUser!): User
+        deleteUserById(userId: ID!): Int
     }
 `;
 

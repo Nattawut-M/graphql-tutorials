@@ -1,5 +1,5 @@
 const { UserList, MovieList } = require("../data");
-
+const lodash = require("lodash");
 const resolvers = {
     Query: {
         getUserList: () => UserList,
@@ -39,7 +39,11 @@ const resolvers = {
                 }
             });
             return UserList[UserList.length - 1];
-
+        },
+        deleteUserById: (_, args) => {
+            const { userId } = args;
+            lodash.remove(UserList, (user) => user.id === Number(userId))
+            return ;
         }
     }
 };

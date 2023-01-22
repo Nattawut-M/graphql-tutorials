@@ -17,4 +17,5 @@
         "nationality": "USA",
         "age": 4
     },
+    "deleteUserByIdUserId": 1
 }
