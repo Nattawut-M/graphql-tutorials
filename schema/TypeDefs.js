@@ -8,6 +8,14 @@ const typeDefs = gql`
         INDIA
         GERMANY
         CHILE
+        USA
+    }
+
+    input CreateUser {
+        name: String!
+        username: String!
+        age: Int!
+        nationality: Nationality = USA # default value
     }
 
     # Schema
@@ -39,6 +47,11 @@ const typeDefs = gql`
         getMovieList: [Movie!]!
         getMovieById(id: ID!): Movie!
         getMovieInTheaters(isInTheater: Boolean!): [Movie]!
+    }
+
+    # GraphQL Mutations
+    type Mutation {
+        createUser(user: CreateUser!): User
     }
 `;
 

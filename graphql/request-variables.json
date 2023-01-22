@@ -1,0 +1,14 @@
+{
+    // queries
+    "movieId": 2,
+    "userId": 1,
+    "isInTheater": true,
+    
+    // mutations
+    "input": {
+        "name": "khainui",
+        "username": "khainui_za007",
+        "nationality": "GERMANY",
+        "age": 3
+    }
+}

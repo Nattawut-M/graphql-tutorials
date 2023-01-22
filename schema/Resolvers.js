@@ -11,6 +11,21 @@ const resolvers = {
         getMovieList: () => MovieList,
         getMovieById: (_, args) => MovieList.find(movie => movie.id == args.id),
         getMovieInTheaters: (_, args) => MovieList.filter(movie => movie.isInTheaters === args.isInTheater)
+    },
+
+    Mutation: {
+        createUser: (parent, args) => {
+            const user = args?.user;
+            let lastIdx = UserList.length - 1;
+            const userLatest = UserList[lastIdx];
+            UserList.push({
+                id: userLatest.id + 1,
+                ...user
+            });
+            lastIdx = UserList.length - 1;
+            console.log(UserList[lastIdx]);
+            return user;
+        }
     }
 };
 
