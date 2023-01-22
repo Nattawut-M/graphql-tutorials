@@ -1,0 +1,44 @@
+query QueryUserList {
+  getUserList {
+    id
+    name
+    username
+    nationality
+  }
+}
+
+
+query QueryUserById($userId: ID!) {
+    getUserById(id: $userId) {
+    id
+    username
+    nationality
+  }
+}
+
+
+query QueryMovieList {
+  getMovieList {
+    id
+    isInTheaters
+    name
+    yearOfPublication
+  }
+}
+
+query QueryMovieById($movieId: ID!) {
+  getMovieById(id: $movieId) {
+    id
+    name
+    isInTheaters
+    yearOfPublication
+  }
+}
+
+query QueryMovieIsInTheaters($isInTheater: Boolean!, $getMovieInTheatersIsInTheater2: Boolean!) {
+  getMovieInTheaters(isInTheater: $isInTheater) {
+    id
+    name
+    yearOfPublication
+  }
+}

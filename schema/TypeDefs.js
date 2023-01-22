@@ -22,11 +22,22 @@ const typeDefs = gql`
         friends: [User]
     }
 
+    type Movie {
+        id: ID!
+        name: String!
+        yearOfPublication: Int!
+        isInTheaters: Boolean!
+    }
+
 
     # GraphQL Query
     type Query {
         getUserList: [User!]!
         getUserById(id: ID!): User!
+
+        getMovieList: [Movie!]!
+        getMovieById(id: ID!): Movie!
+        getMovieInTheaters(isInTheater: Boolean!): [Movie]!
     }
 `;
 
