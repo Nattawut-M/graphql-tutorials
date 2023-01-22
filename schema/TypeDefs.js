@@ -20,6 +20,7 @@ const typeDefs = gql`
         age: Int!
         nationality: Nationality!
         friends: [User]
+        favoriteMovies: [Movie] # favorite movies can be null because some user not have favorite movie.
     }
 
     type Movie {

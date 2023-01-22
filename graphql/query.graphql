@@ -4,18 +4,24 @@ query QueryUserList {
     name
     username
     nationality
+    favoriteMovies {
+      id
+      name
+    }
   }
 }
 
-
 query QueryUserById($userId: ID!) {
-    getUserById(id: $userId) {
+  getUserById(id: $userId) {
     id
     username
     nationality
+    favoriteMovies {
+      id
+      name
+    }
   }
 }
-
 
 query QueryMovieList {
   getMovieList {
@@ -35,7 +41,10 @@ query QueryMovieById($movieId: ID!) {
   }
 }
 
-query QueryMovieIsInTheaters($isInTheater: Boolean!, $getMovieInTheatersIsInTheater2: Boolean!) {
+query QueryMovieIsInTheaters(
+  $isInTheater: Boolean!
+  $getMovieInTheatersIsInTheater2: Boolean!
+) {
   getMovieInTheaters(isInTheater: $isInTheater) {
     id
     name

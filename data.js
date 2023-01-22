@@ -21,6 +21,14 @@ const UserList = [
                 nationality: "CHILE",
             },
         ],
+        favoriteMovies: [
+            {
+                id: 1,
+                name: "Avengers Endgame",
+                yearOfPublication: 2019,
+                isInTheaters: true,
+            },
+        ]
     },
     {
         id: 2,
