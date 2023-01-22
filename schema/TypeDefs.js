@@ -13,17 +13,20 @@ const typeDefs = gql`
     # Schema
     type User {
         id: ID!
-        firstname: String!
-        lastname: String!
+        # firstname: String
+        # lastname: String
+        name: String!
         username: String!
         age: Int!
         nationality: Nationality!
+        friends: [User]
     }
 
 
     # GraphQL Query
     type Query {
         getUserList: [User!]!
+        getUserById(id: ID!): User!
     }
 `;
 
