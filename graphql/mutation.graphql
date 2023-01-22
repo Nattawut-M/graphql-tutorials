@@ -4,3 +4,12 @@ mutation CreateUser($input: CreateUser!) {
     nationality
   }
 }
+
+mutation UpdateUser($updateUser: UpdateUser!) {
+  updateUser(user: $updateUser) {
+    id
+    name
+    age
+    nationality
+  }
+}

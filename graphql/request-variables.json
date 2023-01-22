@@ -10,5 +10,11 @@
         "username": "khainui_za007",
         "nationality": "GERMANY",
         "age": 3
-    }
+    },
+    "updateUser": {
+        "id": "5",
+        "name": "khainui-updated",
+        "nationality": "USA",
+        "age": 4
+    },
 }

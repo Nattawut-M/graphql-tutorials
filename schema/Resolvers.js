@@ -14,7 +14,7 @@ const resolvers = {
     },
 
     Mutation: {
-        createUser: (parent, args) => {
+        createUser: (_, args) => {
             const user = args?.user;
             let lastIdx = UserList.length - 1;
             const userLatest = UserList[lastIdx];
@@ -25,6 +25,21 @@ const resolvers = {
             lastIdx = UserList.length - 1;
             console.log(UserList[lastIdx]);
             return user;
+        },
+        updateUser: (_, args) => {
+            const userArgs = args?.user;
+            console.log(args);
+            UserList.find(user => {
+                if (user.id == userArgs.id) {
+                    user.id = user.id;
+                    user.name = userArgs.name ?? user.name;
+                    user.username = userArgs.username ?? user.username;
+                    user.age = userArgs.age ?? user.age;
+                    user.nationality = userArgs.nationality ?? user.nationality;
+                }
+            });
+            return UserList[UserList.length - 1];
+
         }
     }
 };

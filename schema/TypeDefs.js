@@ -18,6 +18,14 @@ const typeDefs = gql`
         nationality: Nationality = USA # default value
     }
 
+    input UpdateUser {
+        id: ID!
+        name: String
+        username: String
+        age: Int
+        nationality: Nationality
+    }
+
     # Schema
     type User {
         id: ID!
@@ -52,6 +60,7 @@ const typeDefs = gql`
     # GraphQL Mutations
     type Mutation {
         createUser(user: CreateUser!): User
+        updateUser(user: UpdateUser!): User
     }
 `;
 
